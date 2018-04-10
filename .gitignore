@@ -21,5 +21,11 @@
 /yarn-error.log
 
 .byebug_history
-config/secrets.yml
-config/database.yml
+
+/config/database.yml
+/config/secrets.yml
+.drone.yml
+.framgia-ci-result.temp.yml
+Dockerfile
+.framgia-ci-reports
+/framgia_ci_integrate_steps.md
