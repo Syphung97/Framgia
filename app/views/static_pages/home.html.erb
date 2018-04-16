@@ -1,0 +1,14 @@
+<% provide :title, t(".titlepg") %>
+
+<body>
+  <div class="center jumbotron">
+    <%= raw t "static_pages.home.homeheader" %>
+    <p>
+        <%= raw t ".linkTutorial"%>
+    </p>
+    <%= link_to t(".signup"), signup_path , class: "btn btn-lg btn-primary" %>
+  </div>
+  <%= link_to image_tag("rails.png", alt: t(".Railslogo")),
+    "http://rubyonrails.org/" %>
+</body>
+
