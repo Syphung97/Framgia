@@ -61,7 +61,7 @@ group :development, :test do
   gem "rspec"
   gem "rspec-rails"
   gem "rspec-collection_matchers"
-  gem "factory_girl_rails"
+  gem "factory_bot"
   gem "better_errors"
   gem "guard-rspec", require: false
   gem "database_cleaner"
@@ -80,3 +80,5 @@ group :development, :test do
 end
 
 gem "bootstrap-sass", "3.3.7"
+gem "bcrypt", "3.1.11"
+gem "config"

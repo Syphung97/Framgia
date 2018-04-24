@@ -29,3 +29,7 @@
 Dockerfile
 .framgia-ci-reports
 /framgia_ci_integrate_steps.md
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
