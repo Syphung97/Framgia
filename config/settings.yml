@@ -1,3 +1,8 @@
-maxname: 50
-maxemail: 255
-minpassword: 6
+user:
+  name:
+    maxname: 50
+  email:
+    maxemail: 255
+  password:
+    minpassword: 6
+gravatasize: 80

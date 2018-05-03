@@ -62,5 +62,11 @@ en:
       login: "Log in"
   users:
     new:
-      titlepg: Sign up
+      titlepg: "Sign up"
       description: <p>This will be a signup page for new users.</p>
+      success: "Welcome to the Sample App!"
+      create: Create my account
+      confirmation: "Confirmation"
+    show:
+      error: "User not found"
+      success: "Finding complete"

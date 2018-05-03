@@ -6,7 +6,7 @@
     <p>
         <%= raw t ".linkTutorial"%>
     </p>
-    <%= link_to t(".signup"), signup_path , class: "btn btn-lg btn-primary" %>
+    <%= link_to t(".signup"), new_user_path, class: "btn btn-lg btn-primary" %>
   </div>
   <%= link_to image_tag("rails.png", alt: t(".Railslogo")),
     "http://rubyonrails.org/" %>

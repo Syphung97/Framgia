@@ -25,7 +25,8 @@ NotUseTimeAgoInWordsCheck: { }
 OveruseRouteCustomizationsCheck: { customize_count: 3 }
 ProtectMassAssignmentCheck: {
   ignored_files: [
-    "models/ckeditor/asset.rb"
+    "models/ckeditor/asset.rb",
+    "models/application_record.rb"
   ]
 }
 RemoveEmptyHelpersCheck: { }
@@ -41,7 +42,7 @@ RemoveUnusedMethodsInControllersCheck: {
     "Managers::CoursesController#show", "Managers::UsersController#index",
     "Managers::CourseClassesController#index",
     "Managers::ClassTraineesController#index",
-    "Managers::CoursesController#index"
+    "Managers::CoursesController#index", UsersController#show, UsersController#create
   ]
 }
 RemoveUnusedMethodsInHelpersCheck: { except_methods: [] }
