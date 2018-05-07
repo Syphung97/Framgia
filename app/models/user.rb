@@ -1,7 +1,5 @@
 class User < ApplicationRecord
-  enum genders: [:male, :female]
-  before_validation :gender_valid
-
+  enum genders: [:female, :male]
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, format: {with: VALID_EMAIL_REGEX}, presence: true,
     length: {maximum: Settings.maxemail}, uniqueness: {case_sensitive: false}
