@@ -60,6 +60,12 @@ en:
       new: News
     header:
       login: "Log in"
+      users: User
+      account: Account
+      profile: Profile
+      settings: Settings
+      logout: Log out
+      login: Log in
   users:
     new:
       titlepg: "Sign up"
@@ -70,3 +76,10 @@ en:
     show:
       error: "User not found"
       success: "Finding complete"
+  session:
+    new:
+      title: "Login"
+      newuser: New user?
+      now: "Sign up now!"
+    controller:
+      invalid: Invalid email/password combination
