@@ -1,22 +1,33 @@
 class SessionsController < ApplicationController
   include SessionsHelper
 
+  attr_reader :user
   def new
   end
 
   def create
-    user = User.find_by email: params_session[:email].downcase
+    @user = User.find_by email: params_session[:email].downcase
     if user && user.authenticate(params_session[:password])
-      log_in user
-      redirect_to user
+      login_successfull
     else
-      flash.now[:danger] = t "session.controller.invalid"
-      render :new
+      login_false
     end
   end
 
   def destroy
-    log_out
+    log_out if logged_in?
     redirect_to root_url
+  end
+  private
+
+  def login_successfull
+    log_in user
+    remember user if params[:session][:remember_me] == "1"
+    redirect_to user
+  end
+
+  def login_false
+    flash.now[:danger] = t "session.controller.invalid"
+    render :new
   end
 end
