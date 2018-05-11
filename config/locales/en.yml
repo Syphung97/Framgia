@@ -76,6 +76,20 @@ en:
     show:
       error: "User not found"
       success: "Finding complete"
+    edit:
+      title: "Edit user"
+      header: Update your profile
+      save: Save changes
+      gravata: change
+    update:
+      success: "Profile updated"
+      logged_in_user: "Please log in."
+    index:
+      title: All users
+      header: All users
+    delete:
+      confirm: "You sure?"
+      del: "Delete"
   session:
     new:
       title: "Login"
