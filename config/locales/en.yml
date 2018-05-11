@@ -83,3 +83,5 @@ en:
       now: "Sign up now!"
     controller:
       invalid: Invalid email/password combination
+    login:
+      remember: Remember me on this computer
