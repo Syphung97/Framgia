@@ -1,6 +1,4 @@
 class SessionsController < ApplicationController
-  include SessionsHelper
-
   attr_reader :user
   def new
   end
@@ -23,7 +21,7 @@ class SessionsController < ApplicationController
   def login_successfull
     log_in user
     remember user if params[:session][:remember_me] == "1"
-    redirect_to user
+    redirect_back_or user
   end
 
   def login_false

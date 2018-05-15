@@ -53,7 +53,7 @@ GEM
     ast (2.4.0)
     astrolabe (1.3.1)
       parser (~> 2.2)
-    autoprefixer-rails (8.3.0)
+    autoprefixer-rails (8.4.1)
       execjs
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
@@ -68,7 +68,9 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
-    brakeman (4.2.1)
+    bootstrap-will_paginate (1.0.0)
+      will_paginate
+    brakeman (4.3.0)
     builder (3.2.3)
     bundler-audit (0.6.0)
       bundler (~> 1.2)
@@ -142,6 +144,8 @@ GEM
     execjs (2.7.0)
     factory_bot (4.8.2)
       activesupport (>= 3.0.0)
+    faker (1.7.3)
+      i18n (~> 0.5)
     ffi (1.9.23)
     formatador (0.2.5)
     globalid (0.4.1)
@@ -160,7 +164,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    i18n (1.0.1)
+    i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
     inflecto (0.0.2)
@@ -193,7 +197,7 @@ GEM
     minitest (5.11.3)
     multi_json (1.13.1)
     nenv (0.3.0)
-    nio4r (2.3.0)
+    nio4r (2.3.1)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     notiffany (0.1.1)
@@ -207,7 +211,7 @@ GEM
       method_source (~> 0.9.0)
     public_suffix (3.0.2)
     puma (3.11.4)
-    rack (2.0.4)
+    rack (2.0.5)
     rack-test (1.0.0)
       rack (>= 1.0, < 3)
     railroady (1.5.3)
@@ -228,13 +232,13 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
-    rails_best_practices (1.19.1)
+    rails_best_practices (1.19.2)
       activesupport
       code_analyzer (>= 0.4.8)
       erubis
       i18n
       json
-      require_all (~> 1.5.0)
+      require_all (~> 2.0)
       ruby-progressbar
     railties (5.1.6)
       actionpack (= 5.1.6)
@@ -253,7 +257,7 @@ GEM
       parser (>= 2.5.0.0, < 2.6)
       rainbow (>= 2.0, < 4.0)
     ref (2.0.0)
-    require_all (1.5.0)
+    require_all (2.0.0)
     rspec (3.7.0)
       rspec-core (~> 3.7.0)
       rspec-expectations (~> 3.7.0)
@@ -304,7 +308,7 @@ GEM
       rake (>= 0.9, < 13)
       sass (~> 3.5.5)
     scss_lint_reporter_checkstyle (0.2.0)
-    selenium-webdriver (3.11.0)
+    selenium-webdriver (3.12.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
     sexp_processor (4.11.0)
@@ -341,7 +345,7 @@ GEM
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
-    web-console (3.6.1)
+    web-console (3.6.2)
       actionview (>= 5.0)
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
@@ -349,6 +353,7 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
+    will_paginate (3.1.6)
     xpath (3.0.0)
       nokogiri (~> 1.8)
 
@@ -360,6 +365,7 @@ DEPENDENCIES
   bcrypt (= 3.1.11)
   better_errors
   bootstrap-sass (= 3.3.7)
+  bootstrap-will_paginate (= 1.0.0)
   brakeman
   bundler-audit
   byebug
@@ -369,6 +375,7 @@ DEPENDENCIES
   database_cleaner
   eslint-rails!
   factory_bot
+  faker (= 1.7.3)
   guard-rspec
   jbuilder (~> 2.5)
   jquery-rails
@@ -395,6 +402,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+  will_paginate (= 3.1.6)
 
 BUNDLED WITH
    1.16.1
