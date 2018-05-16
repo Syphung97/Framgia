@@ -13,5 +13,8 @@
   <%= f.label :password_confirmation, t("users.new.confirmation") %>
   <%= f.password_field :password_confirmation, class: "form-control" %>
 
+  <%= f.label :gender %>
+  <%= f.select :gender, options_for_select(genders.keys.unshift("Select"), user.gender) %>
+
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
