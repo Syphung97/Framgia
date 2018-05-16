@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   enum genders: [:female, :male]
-  attr_reader :remember_token
+  attr_reader :remember_token, :activation_token
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, format: {with: VALID_EMAIL_REGEX}, presence: true,
     length: {maximum: Settings.maxemail}, uniqueness: {case_sensitive: false}
@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validates :gender, inclusion: {in: genders.keys}
 
   before_save :email_down
+  before_create :create_activation_digest
   has_secure_password
 
   class << self
@@ -33,9 +34,10 @@ class User < ApplicationRecord
     update_attributes remember_digest: User.digest(remember_token)
   end
 
-  def authenticated? remember_token
-    return false unless remember_digest
-    BCrypt::Password.new(remember_digest).is_password? remember_token
+  def authenticated? attribute, token
+    digest = send "#{attribute}_digest"
+    return false unless digest
+    BCrypt::Password.new(digest).is_password? token
   end
 
   def forget
@@ -45,9 +47,28 @@ class User < ApplicationRecord
   def current_user? current_user
     self == current_user
   end
+
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
+
+  def activate
+    update_attributes activated: true, activated_at: Time.zone.now
+  end
+
+  def update_active_digest
+    create_activation_digest
+    update_attributes activation_digest: activation_digest
+  end
+
   private
 
   def email_down
     self.email = email.downcase
+  end
+
+  def create_activation_digest
+    @activation_token = User.new_token
+    self.activation_digest = User.digest activation_token
   end
 end

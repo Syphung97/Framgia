@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :return_genders, only: [:new, :edit, :create]
   before_action :logged_in_user, only: [:edit, :update]
   before_action :find_user, only: [:edit, :update, :destory, :show]
   before_action :correct_user, only: [:edit, :update]
@@ -10,15 +11,12 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @genders = User.genders
   end
 
   def create
-    @genders = User.genders
     @user = User.new user_params
     if user.save
-      flash[:danger] = t "users.new.success"
-      redirect_to user
+      require_active
     else
       render :new
     end
@@ -73,5 +71,15 @@ class UsersController < ApplicationController
     return if user
     flash[:danger] = t "users.show.error"
     redirect_to root_path
+  end
+
+  def require_active
+    user.send_activation_email
+    flash[:info] = t "mailer.account_activation.message"
+    redirect_to root_url
+  end
+
+  def return_genders
+    @genders = User.genders
   end
 end

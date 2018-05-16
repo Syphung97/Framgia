@@ -99,3 +99,14 @@ en:
       invalid: Invalid email/password combination
     login:
       remember: Remember me on this computer
+  mailer:
+    account_activation:
+      title: Sample App
+      hi: Hi
+      content: Welcome to the Sample App! Click on the link below to activate your account
+      activate: "Activate"
+      subject: "Account activation"
+      message: "Please check your email to activate your account."
+      account_activated: "Account activated!"
+      invalid: "Invalid activation link"
+      warning: Account not activated! Check your email for the activation link.
