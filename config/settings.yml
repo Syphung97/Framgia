@@ -6,3 +6,12 @@ user:
   password:
     minpassword: 6
 gravatasize: 80
+
+micropost:
+  content:
+    max_length: 140
+  size: 50
+img_size: 5
+picture:
+  size: 400
+element_total: 10

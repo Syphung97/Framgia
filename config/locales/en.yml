@@ -131,3 +131,18 @@ en:
       expire: "Password reset has expired."
       success: "Password has been reset."
       error: "can't be empty"
+  micropost:
+    text: Microposts
+    posted: Posted
+    ago: "ago."
+    success: "Micropost created!"
+    feed: Micropost Feed
+  share:
+    the_form_contain: The form contains
+    delete: "Delete"
+    confirm: "You sure"
+    size_img: "should be less than 5MB" 
+    post: "Post" 
+  micropost_deleted: Micropost deleted
+  view_my_profile: view my profile
+  compose_new_micropost: Compose new micropost

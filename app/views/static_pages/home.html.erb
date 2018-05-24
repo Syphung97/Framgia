@@ -1,14 +1,30 @@
 <% provide :title, t(".titlepg") %>
 
 <body>
-  <div class="center jumbotron">
-    <%= raw t "static_pages.home.homeheader" %>
-    <p>
-        <%= raw t ".linkTutorial"%>
-    </p>
-    <%= link_to t(".signup"), new_user_path, class: "btn btn-lg btn-primary" %>
-  </div>
-  <%= link_to image_tag("rails.png", alt: t(".Railslogo")),
-    "http://rubyonrails.org/" %>
+  <% if logged_in? %>
+    <div class="row">
+      <aside class="col-md-4">
+        <section class="user_info">
+          <%= render "shared/user_info" %>
+        </section>
+        <section class="micropost_form">
+          <%= render "shared/micropost_form", micropost: @micropost %>
+        </section>
+      </aside>
+      <div class="col-md-8">
+        <h3><%= t("feed") %></h3>
+        <%= render "shared/feed", feed_items: @feed_items %>
+      </div>
+    </div>
+  <% else %>
+    <div class="center jumbotron">
+      <%= raw t "static_pages.home.homeheader" %>
+      <p>
+          <%= raw t ".linkTutorial"%>
+      </p>
+      <%= link_to t(".signup"), new_user_path, class: "btn btn-lg btn-primary" %>
+    </div>
+    <%= link_to image_tag("rails.png", alt: t(".Railslogo")),
+      "http://rubyonrails.org/" %>
+  <% end %>
 </body>
-
