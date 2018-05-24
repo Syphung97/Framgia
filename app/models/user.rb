@@ -1,7 +1,11 @@
 class User < ApplicationRecord
   enum genders: [:female, :male]
   attr_reader :remember_token, :activation_token, :reset_token
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
+  has_many :microposts, dependent: :destroy
+
   validates :email, format: {with: VALID_EMAIL_REGEX}, presence: true,
     length: {maximum: Settings.maxemail}, uniqueness: {case_sensitive: false}
   validates :password, presence: true, length: {minimum: Settings.minpassword},
@@ -73,6 +77,10 @@ class User < ApplicationRecord
 
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
+  end
+
+  def feed
+    microposts
   end
 
   private
