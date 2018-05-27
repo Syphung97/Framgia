@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   def show
     @microposts = user.microposts.desc.paginate page: params[:page],
       per_page: Settings.element_total
+    @supports = Supports::User.new user: user, current_user: current_user
   end
 
   def edit; end
