@@ -1,0 +1,2 @@
+$("#micropost-<%= @micropost.id %> #edit_form").css("display","block");
+$("#micropost-<%= @micropost.id %> #edit_form").html("<%= j render "shared/micropost_form", micropost: @micropost %>")

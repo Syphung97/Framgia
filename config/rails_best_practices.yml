@@ -44,7 +44,7 @@ RemoveUnusedMethodsInControllersCheck: {
     "Managers::ClassTraineesController#index",
     "Managers::CoursesController#index", UsersController#show, UsersController#create,
      SessionsController#new, SessionsController#create, SessionsController#destroy,
-     UsersController#index
+     UsersController#index, UsersController#check_mail, StaticPagesController#home
   ]
 }
 RemoveUnusedMethodsInHelpersCheck: { except_methods: [] }

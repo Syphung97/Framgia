@@ -45,6 +45,13 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
+  def check_mail
+    @email = User.find_by email: params[:email]
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
   attr_reader :user

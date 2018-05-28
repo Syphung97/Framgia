@@ -16,3 +16,16 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+$( document ).on('turbolinks:load', function(){
+    $("#user_email").blur(function(){
+        var u = $(this).val();
+        alert(u);
+        $.ajax({
+            type: "POST",
+            url: "/users/check_mail",
+            data:{email: u},
+            dataType: "script"
+        });
+    });
+});
