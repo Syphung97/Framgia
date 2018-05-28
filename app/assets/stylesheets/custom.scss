@@ -10,6 +10,7 @@ $gray-medium-light: #eaeaea;
 $gray-light: #777;
 $white-line: #bbb;
 $red: #f00;
+$blue: #00f;
 
 @mixin box_sizing {
   box-sizing: border-box;
@@ -226,4 +227,48 @@ span {
       border: 0;
     }
   }
+}
+
+.stats {
+  margin-top: 0;
+  overflow: auto;
+  padding: 0;
+
+  a {
+    border-left: 1px solid $gray-lighter;
+    color: $gray-light;
+    float: left;
+    padding: 0 10px;
+
+    &:first-child {
+      border: 0;
+      padding-left: 0;
+    }
+
+    &:hover {
+      color: $blue;
+      text-decoration: none;
+    }
+  }
+
+  strong {
+    display: block;
+  }
+}
+
+.user-avatars {
+  margin-top: 10px;
+  overflow: auto;
+
+  .gravatar {
+    margin: 1px;
+  }
+
+  a {
+    padding: 0;
+  }
+}
+
+.users.follow {
+  padding: 0;
 }

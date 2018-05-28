@@ -146,3 +146,8 @@ en:
   micropost_deleted: Micropost deleted
   view_my_profile: view my profile
   compose_new_micropost: Compose new micropost
+  following: Followings
+  followers: Followers
+  failed_user: Failse User
+  follow: Follow
+  unfollow: Unfollow
